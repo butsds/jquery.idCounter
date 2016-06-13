@@ -62,17 +62,17 @@
             $decrememt  : this.$decrement
         }
 
+        if (typeof this.settings.infoTargets.cost === "string") {
+            this.$costTargets = $(this.settings.infoTargets.cost);
+        } else {
+            this.$costTargets = false;
+        }
+
+        if (this.settings.infoTargets.value && typeof this.settings.infoTargets.value === "string") {
+            this.$others = $(this.settings.infoTargets.value);
+        }
+        
         if (!this.settings.disable) {
-
-            if (typeof this.settings.infoTargets.cost === "string") {
-                this.$costTargets = $(this.settings.infoTargets.cost);
-            } else {
-                this.$costTargets = false;
-            }
-
-            if (this.settings.infoTargets.value && typeof this.settings.infoTargets.value === "string") {
-                this.$others = $(this.settings.infoTargets.value);
-            }
 
             this.$increment.on("click", function(e) { 
                 return self.incrementHandler(e);

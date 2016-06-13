@@ -26,8 +26,8 @@ gulp.task('css', function(){
 gulp.task('sass', ['css'], function() {
     return gulp.src("sass/*.{sass,scss}")
         .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(rename('jquery.idcounter.min.css'))
-        .pipe(gulp.dest('css'));
+        .pipe(rename('jquery.idcounter.theme.min.css'))
+        .pipe(gulp.dest('../css'));
 });
 
 gulp.task('js', function() {

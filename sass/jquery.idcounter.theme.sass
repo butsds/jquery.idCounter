@@ -1,0 +1,58 @@
+.id-counter
+    display: inline-block
+    & > *
+        float: left
+        display: inline-block
+        font-size: 16px
+        font-family: Arial
+        vertical-align: middle
+        box-sizing: border-box
+        padding: 3px 5px
+        text-align: center
+        
+        & + *
+            border-left: none
+            outline: none
+
+    &:after
+        content: ""
+        display: block
+        clear: both
+
+    &-increment, &-decrement
+        cursor: pointer
+        -webkit-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+        padding: 5px 10px
+        background: url('../i/btn.png') repeat-x
+        box-shadow: 2px 2px 5px rgba(26, 26, 26, 0.5)
+        color: white
+        font-weight: bold
+        width: 30px
+
+        &:hover
+            background-position: 0 -30px
+
+        &:active
+            background-position: 0 0
+
+        &-disable
+            &:hover
+                background-position: 0 0
+
+
+    &-increment
+        border-radius: 0 5px 5px 0
+
+    &-decrement
+        border-radius: 5px 0 0 5px
+
+    &-input
+        width: 40px
+        border-top: 2px solid #FFA93E
+        border-bottom: 2px solid #FF8500
+        border-right: transparent
+        border-left: transparent
+        box-shadow: 2px 2px 5px rgba(26, 26, 26, 0.5)
