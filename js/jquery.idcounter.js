@@ -45,6 +45,7 @@
     Plugin.prototype.init = function() {
         var self = this;
 
+        this.$element.addClass("id-counter");
         this.$increment = $('<div class="id-counter-increment ' + this.settings.classes.increment + '">').text(this.settings.content.increment);
         this.$input     = $('<input class="id-counter-input ' + this.settings.classes.input + '">').attr("maxLength", this.settings.maxLength);
         this.$decrement = $('<div class="id-counter-decrement ' + this.settings.classes.decrement + '">').text(this.settings.content.decrement);
@@ -96,6 +97,7 @@
         } else {
             this.$increment.addClass('id-counter-increment-disable');
             this.$decrement.addClass('id-counter-decrement-disable');
+            this.$input.prop("disabled", true);
         }
 
         this.setValue(this.settings.defaultValue);
