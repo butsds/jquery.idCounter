@@ -72,6 +72,8 @@
             this.$others = $(this.settings.infoTargets.value);
         }
         
+        this.settings.cost = parseInt(this.settings.cost) || 0;
+        
         if (!this.settings.disable) {
 
             this.$increment.on("click", function(e) { 
@@ -226,6 +228,7 @@
     Plugin.prototype.keydownHandler = function(e) {
         if (e.which == 38) {
             this.incrementHandler();
+            return false;
         } else if (e.which == 40) {
             this.decrementHandler();
         }
